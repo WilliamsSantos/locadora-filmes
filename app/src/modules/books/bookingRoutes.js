@@ -2,6 +2,7 @@
 
 const { authRouterMiddleware, isAdminMiddleware } = require("middlewares");
 const useGeneralConfig = require("general/constants");
+const BookingValidator = require("./validations");
 const BookingController = require("./bookingController");
 const useBookingConfig = require("./constants");
 const { API_V1 } = useGeneralConfig();
@@ -12,13 +13,21 @@ module.exports = (router) => {
 
   router.post(
     DEFAULT_ROUTE,
-    [authRouterMiddleware, isAdminMiddleware],
+    [
+      BookingValidator.validateBookingRequest(),
+      authRouterMiddleware,
+      isAdminMiddleware,
+    ],
     BookingController.booking
   );
 
   router.post(
     `${DEFAULT_ROUTE}/:id/confirm`,
-    [authRouterMiddleware, isAdminMiddleware],
+    [
+      BookingValidator.validateBookingConfirmRequest(),
+      authRouterMiddleware,
+      isAdminMiddleware,
+    ],
     BookingController.confirmBooking
   );
 

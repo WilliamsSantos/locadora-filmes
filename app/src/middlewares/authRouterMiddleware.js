@@ -35,7 +35,7 @@ module.exports = async (req, res, next) => {
       return sendAuthError(res, "Acesso negado. Usuário não registrado.", 403);
     }
 
-    req.user = user;
+    req.user = {...user, id: userStored.id};
     next();
   } catch (err) {
     sendAuthError(res, "Acesso negado. Token inválido.", 403);

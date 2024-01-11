@@ -34,6 +34,7 @@ http://localhost:3000/api/v1/ping-pong
 - Docker
 - MongoExpress
 - Redis
+- Bull
 
 ## Database
 
@@ -82,7 +83,7 @@ POST: http://localhost:3000/api/v1/register
 }
 ```
 
-- Usuários admin podem <b>reservar filmes</b>, <b>confirmar reserva</b> e <b>Confirmar devoluções</b>
+- Usuários admin (simula um usuário superior) podem <b>reservar filmes</b>, <b>confirmar reserva</b> e <b>Confirmar devoluções</b>.
 - Usuários comuns, ou não autenticados podem listar filmes, e listar um filme pelo id
 
 ### Para fazer o login:
@@ -283,7 +284,7 @@ resposta:
 
 - O filme permanecerá com o status "waiting" (esperando retirada), por até 3h e o filme será removido da lista de filmes, até ficar disponivel novamente.
 
-- Caso o tempo expire o status será alterado para 'expired' (reserva expirada) e o filme voltara a ficar como available
+- Caso o tempo expire o status será alterado para 'expired' (reserva expirada) e o filme voltara a ficar como available. Esse monitoramento é feito por um job que verifica de 1 em 1 minuto as reservas, e libera os filmes para locação caso o status de espera permaneça maior do que 3h. 
 
 #### Para Confirmando a reserva do Filme(cliente retirou na locadora):
 
