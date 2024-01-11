@@ -13,9 +13,11 @@ const ALLOWED_BOOKING_STATUS = {
 
 const isActiveBooking = (status) => ALLOWED_BOOKING_STATUS.waiting === status;
 
-module.exports = () => ({
+const useBookingConfig = () => ({
   ROUTE,
   TABLE_NAME,
   ALLOWED_BOOKING_STATUS,
   isActiveBooking,
 });
+
+module.exports = useBookingConfig;

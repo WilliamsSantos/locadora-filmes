@@ -18,7 +18,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.0.0",
-    "nodemon": "^2.0.0"
+    "jest-module-name-mapper": "^0.1.5",
+    "nodemon": "^2.0.0",
+    "tslib": "^2.6.2"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

@@ -3,9 +3,10 @@
 const mongoose = require("mongoose");
 const useCustomerConfig = require("modules/customer/constants");
 const useMovieConfig = require("modules/movies/constants");
-const useBookingConfig = require("./constants");
+const useBookingConfig = require("modules/books/constants");
 
-const { TABLE_NAME: BOOKING_TABLE_NAME, ALLOWED_BOOKING_STATUS } =
+
+const { TABLE_NAME, ALLOWED_BOOKING_STATUS } =
   useBookingConfig();
 
 const { Schema } = mongoose;
@@ -53,6 +54,6 @@ const bookingSchema = new Schema(
   { timestamps: true, freezeTableName: true }
 );
 
-const Booking = mongoose.model(BOOKING_TABLE_NAME, bookingSchema);
+const Booking = mongoose.model(TABLE_NAME, bookingSchema);
 
 module.exports = Booking;

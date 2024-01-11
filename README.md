@@ -47,10 +47,8 @@ http://localhost:8081/db/test
 ## Tests
 
 Para rodar os testes execute:
-
-```
-docker-compose -exec npm run test
-```
+- Entre no container
+- Execute npm run test
 
 ## Autenticação
 
