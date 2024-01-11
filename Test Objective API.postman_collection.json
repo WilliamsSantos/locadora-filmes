@@ -1,0 +1,882 @@
+{
+	"info": {
+		"_postman_id": "98792b64-900f-4456-9388-bb2bb2140a06",
+		"name": "Test Objective API",
+		"description": "Endpoints da API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7576191"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "List All Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "nome do filme 3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List All Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "nome do filme 3",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "882"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"372-yHnsZ6IKDiAQXcFnfrG0ZcG1Qr8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 01:11:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"is_active\": true,\n            \"_id\": \"659eff31ac1d751e7dc081a1\",\n            \"name\": \"nome do filme2\",\n            \"synopsis\": \"sinopse exemplo\",\n            \"rating\": 9,\n            \"genre\": \"horror\",\n            \"status\": \"available\",\n            \"release_date\": \"2024-01-10T20:33:53.808Z\",\n            \"createdAt\": \"2024-01-10T20:33:53.809Z\",\n            \"updatedAt\": \"2024-01-10T20:33:53.809Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"659f388ca19c17a698680540\",\n            \"name\": \"Filme de exemplo 10\",\n            \"synopsis\": \"sinopse exemplo 10\",\n            \"rating\": 9,\n            \"genre\": \"terrror\",\n            \"is_active\": true,\n            \"status\": \"available\",\n            \"release_date\": \"2024-01-11T00:38:36.967Z\",\n            \"createdAt\": \"2024-01-11T00:38:36.968Z\",\n            \"updatedAt\": \"2024-01-11T00:38:36.968Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"659f38a6a19c17a698680548\",\n            \"name\": \"Filme de exemplo 11\",\n            \"synopsis\": \"sinopse exemplo 11\",\n            \"rating\": 1,\n            \"genre\": \"22\",\n            \"is_active\": true,\n            \"status\": \"available\",\n            \"release_date\": \"2024-01-11T00:39:02.168Z\",\n            \"createdAt\": \"2024-01-11T00:39:02.169Z\",\n            \"updatedAt\": \"2024-01-11T00:39:02.169Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Movies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n  \"name\": \"Filme de exemplo 3\",\n  \"synopsis\": \"sinopse exemplo 3\",\n  \"rating\": 0.1,\n  \"release_date\": \"2024-12-10\",\n  \"genre\": \"terror\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/movies"
+					},
+					"response": [
+						{
+							"name": "Create Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n  \"name\": \"nome do filme\",\n  \"synopsis\": \"sinopse exemplo\",\n  \"rating\": 9.0,\n  \"releaseDate\": \"2024-12-10\",\n  \"genre\": \"horror\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/v1/movies"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "258"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"102-CCJA5Yzla+ZAjLcIMLXk98I3CD8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 03:20:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"nome do filme\",\n    \"synopsis\": \"sinopse exemplo\",\n    \"rating\": 9,\n    \"releaseDate\": \"2024-12-10T00:00:00.000Z\",\n    \"genre\": \"horror\",\n    \"available\": true,\n    \"_id\": \"659e0cff71042857cf9fcc44\",\n    \"createdAt\": \"2024-01-10T03:20:31.282Z\",\n    \"updatedAt\": \"2024-01-10T03:20:31.282Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Create Movies erros message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlmMTliOGExNTUzZjllMGE3Mjc1OWEiLCJuYW1lIjoiSm9uRG9lIiwiZW1haWwiOiJ1c3VhcmlvQGFkbWluLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MjU4MDUsImV4cCI6MTcwNDk0MzgwNX0.PlV49Ue6NxXrB5XpppIVLzN1yNDyR-gmpDu2KirU3wk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n  \"name\": \"\",\n  \"synopsis\": \"sinopse exemplo 9\",\n  \"rating\": 9.0,\n  \"releaseDate\": \"2024-12-10\",\n  \"genre\": \"terrr\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/v1/movies"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-/bNs64Qc7SCcJY0rM1iGdMm5xxk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 00:37:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Name min 2 letters\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movies",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n  \"name\": \"nome do filme 00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "659f497771a0c9a8d9b70e82"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find one Movie by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/movies/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "659eff31ac1d751e7dc081a1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "find one Movie by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/movies/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"movies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "659eff31ac1d751e7dc081a1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-uW1eKRI11eanZ3BaXTkOBlL2mck\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 01:12:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"is_active\": true,\n        \"name\": \"nome do filme2\",\n        \"synopsis\": \"sinopse exemplo\",\n        \"rating\": 9,\n        \"genre\": \"horror\",\n        \"status\": \"available\",\n        \"release_date\": \"2024-01-10T20:33:53.808Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "CRUD de filmes"
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "book a movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_id\": \"659f499f71a0c9a8d9b70e87\",\n    \"customer_id\": \"659f1f7b7c303291a89671fe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/book"
+					},
+					"response": [
+						{
+							"name": "book a movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlmMTliOGExNTUzZjllMGE3Mjc1OWEiLCJuYW1lIjoiSm9uRG9lIiwiZW1haWwiOiJ1c3VhcmlvQGFkbWluLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MjU4MDUsImV4cCI6MTcwNDk0MzgwNX0.PlV49Ue6NxXrB5XpppIVLzN1yNDyR-gmpDu2KirU3wk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"movie_id\": \"659f1e687c303291a89671f3\",\n    \"customer_id\": \"659f1f7b7c303291a89671fe\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/v1/book"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-tnyqN7fJqrZ9yn+kg+ZeD6d8C0k\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 23:00:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"reservation_id\": \"659f219645cc77722e9e551b\",\n        \"status\": \"waiting\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "return booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/:id/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								":id",
+								"return"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "659f219645cc77722e9e551b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book a movie confirm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": {\n        \"name\": \"JonDoe\",\n        \"email\": \"usuario@comum.com\",\n        \"phone\": \"82987787320\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/:id/confirm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								":id",
+								"confirm"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "659f219645cc77722e9e551b"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "book a movie confirm",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlmMTliOGExNTUzZjllMGE3Mjc1OWEiLCJuYW1lIjoiSm9uRG9lIiwiZW1haWwiOiJ1c3VhcmlvQGFkbWluLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MjU4MDUsImV4cCI6MTcwNDk0MzgwNX0.PlV49Ue6NxXrB5XpppIVLzN1yNDyR-gmpDu2KirU3wk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"customer\": {\n        \"name\": \"JonDoe\",\n        \"email\": \"usuario@comum.com\",\n        \"phone\": \"82987787320\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/:id/confirm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										":id",
+										"confirm"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "659f219645cc77722e9e551b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-gRmkxBfQQheFlEp+oiHa1mmtsnE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 23:12:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"schedule_id\": \"659f219645cc77722e9e551b\",\n        \"status\": \"leased\"\n    }\n}"
+						},
+						{
+							"name": "reserved movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlmMTliOGExNTUzZjllMGE3Mjc1OWEiLCJuYW1lIjoiSm9uRG9lIiwiZW1haWwiOiJ1c3VhcmlvQGFkbWluLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE3MDQ5MjU4MDUsImV4cCI6MTcwNDk0MzgwNX0.PlV49Ue6NxXrB5XpppIVLzN1yNDyR-gmpDu2KirU3wk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"customer\": {\n        \"name\": \"JonDoe\",\n        \"email\": \"usuario@comum.com\",\n        \"phone\": \"82987787320\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/:id/confirm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										":id",
+										"confirm"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "659f219645cc77722e9e551b"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-khMT9FbKGvmU7Hnf2Zl8mmKLmkY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 23:37:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Filme Já Reservado.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"JonDoe\",\n    \"email\": \"usuario@comum.com\",\n    \"password\": \"123Password\",\n    \"phone\": \"82987787320\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/register"
+					},
+					"response": [
+						{
+							"name": "register admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"JonDoe\",\n    \"email\": \"usuario@admin.com\",\n    \"password\": \"123456\",\n    \"phone\": \"82987087328\",\n    \"is_admin\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/v1/register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"139-9CkERrtgpa59Byn0Q51ga+RXK1Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 22:27:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"JonDoe\",\n    \"phone\": \"82987087328\",\n    \"email\": \"usuario@admin.com\",\n    \"password\": \"$2b$12$U31oopEim/mSBENmadzKwOrb9uqYdgSrwrDeCnAA3FNoX23dS6hCi\",\n    \"ip\": \"192.168.80.1\",\n    \"is_active\": true,\n    \"is_admin\": true,\n    \"_id\": \"659f19b8a1553f9e0a72759a\",\n    \"createdAt\": \"2024-01-10T22:27:04.306Z\",\n    \"updatedAt\": \"2024-01-10T22:27:04.306Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "usuario comum",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"JonDoe\",\n    \"email\": \"usuario@comum.com\",\n    \"password\": \"123Password\",\n    \"phone\": \"82987787320\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/v1/register"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13a-40w3gBdjuc00UbauD8eD+jj4irs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Jan 2024 22:51:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"JonDoe\",\n    \"phone\": \"82987787320\",\n    \"email\": \"usuario@comum.com\",\n    \"password\": \"$2b$12$/CmO6t6S3uGVdWvjh3FJFe96g22OXCf6tTZ4PaEXfJiyBFpOkoQEW\",\n    \"ip\": \"192.168.80.1\",\n    \"is_active\": true,\n    \"is_admin\": false,\n    \"_id\": \"659f1f7b7c303291a89671fe\",\n    \"createdAt\": \"2024-01-10T22:51:39.155Z\",\n    \"updatedAt\": \"2024-01-10T22:51:39.155Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"usuario@admin.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
