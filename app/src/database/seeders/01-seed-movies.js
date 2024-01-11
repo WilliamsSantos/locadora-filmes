@@ -1,6 +1,6 @@
 'use strict';
 
-DATABASE='cinerenthub_dev';
+DATABASE='test';
 
 db = db.getSiblingDB(DATABASE);
 
