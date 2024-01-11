@@ -4,6 +4,8 @@ const express = require('express');
 const useServerConfig = require('./configurations');
 const configureRoutes = require('./configureRoutes');
 
+require('jobs/bookQueue');
+
 const { PORT } = useServerConfig();
 
 const startServer = () => {

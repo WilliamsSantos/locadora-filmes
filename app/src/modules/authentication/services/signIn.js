@@ -5,13 +5,6 @@ const useUtils = require("general/utils");
 const useCustomerRepository = require("modules/customer/customerRepository");
 const useAuthConfig = require("../constants");
 
-const assembleUserData = ({ _id, name, email, is_admin }) => ({
-  _id,
-  name,
-  email,
-  is_admin,
-});
-
 module.exports = async (req) => {
   const { email, password } = req.body ?? {};
 
@@ -34,7 +27,7 @@ module.exports = async (req) => {
   }
 
   const token = jwt.sign(
-    assembleUserData(userLogged),
+    { id: userLogged._id },
     useAuthConfig().JWT_SECRET_TOKEN,
     {
       expiresIn: useAuthConfig().EXPIRATION_TOKEN_HOUR,

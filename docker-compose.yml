@@ -18,6 +18,8 @@ services:
       - MONGO_SERVICE_NAME=${MONGO_SERVICE_NAME}
       - MONGO_PORT=${MONGO_PORT}
       - DATABASE=${MONGO_DATABASE}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_HOST=${REDIS_HOST}
       - JWT_SECRET=${JWT_SECRET}
     networks:
       - cinerent_hub_network
@@ -48,6 +50,13 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_ROOT_USERNAME}
       ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_ROOT_PASSWORD}
       ME_CONFIG_MONGODB_SERVER: cinerent_hub_mongo
+    networks:
+      - cinerent_hub_network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "${REDIS_PORT}:6379"
     networks:
       - cinerent_hub_network
 
